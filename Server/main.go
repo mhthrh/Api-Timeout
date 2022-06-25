@@ -20,7 +20,6 @@ func handler(writer http.ResponseWriter, request *http.Request) {
 		fmt.Fprint(writer, "Hi my client")
 	case <-ctx.Done():
 		fmt.Println("Time out ==> ", ctx.Err())
-		http.Error(writer, ctx.Err().Error(), http.StatusRequestTimeout)
 	}
 
 }
